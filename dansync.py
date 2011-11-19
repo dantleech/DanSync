@@ -49,8 +49,7 @@ def ignoreName(name):
 
 def gitInit():
     global doCommit
-    code = gitExec('git status')
-    if code == 128:
+    if !path.exists(config.sync.directory + ".git"):
         log('Initializing new git repo')
         gitExec('git init')
         gitExec('git config --global user.name "%s"'% config.sync.username)
